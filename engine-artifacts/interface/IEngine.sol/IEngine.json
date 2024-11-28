@@ -1,0 +1,393 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IEngine",
+  "sourceName": "contracts/V3/interface/IEngine.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "clusterArea",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "taskState",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "round",
+          "type": "uint16"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16",
+          "name": "ioBranch",
+          "type": "uint16"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "args",
+          "type": "bytes"
+        }
+      ],
+      "name": "EventTask",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Receive",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "args",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "roundList",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "claim",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "args",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "outAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "roundList",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "claimAddress",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "cname",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "args",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "roundList",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "execute",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "args",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "roundList",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "executeClaim",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolFee",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolTokenInput",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "clusterArea",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint16",
+          "name": "ruleSlotIndexInput",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "ruleSlotIndexOutput",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint8",
+          "name": "groupInputBranch",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "multiple",
+          "type": "uint32"
+        },
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeIn[]",
+              "name": "attrInList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct Token.Token[]",
+          "name": "inTokenList",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "args",
+          "type": "bytes"
+        }
+      ],
+      "name": "input",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "channel",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bool",
+          "name": "_paused",
+          "type": "bool"
+        }
+      ],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "stateCounter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "taskId",
+          "type": "uint32"
+        }
+      ],
+      "name": "revoke",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

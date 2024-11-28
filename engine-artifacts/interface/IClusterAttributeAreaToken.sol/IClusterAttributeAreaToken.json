@@ -1,0 +1,751 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IClusterAttributeAreaToken",
+  "sourceName": "contracts/V3/interface/IClusterAttributeAreaToken.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "SetClusterAttr",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "SetTokenAttr",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "parentAttrId",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "latestState",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "int40",
+          "name": "latestAttrAmount",
+          "type": "int40"
+        }
+      ],
+      "name": "TokenAttrChange",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "cname",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "parentAttrId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "getClusterTokenAttrData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "attrId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "attrType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "int40",
+              "name": "attrAmount",
+              "type": "int40"
+            },
+            {
+              "internalType": "uint32",
+              "name": "parentAttrId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "attrState",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct Attribute.AttributeData",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getClusterTokenAttrIdList",
+      "outputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "",
+          "type": "uint32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "parentAttrId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "getClusterTokenAttrOpt",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "attrId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "attrOpt",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "attrType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "int40",
+              "name": "attrAmount",
+              "type": "int40"
+            },
+            {
+              "internalType": "int40",
+              "name": "attrAmountMin",
+              "type": "int40"
+            },
+            {
+              "internalType": "int40",
+              "name": "attrAmountMax",
+              "type": "int40"
+            },
+            {
+              "internalType": "string",
+              "name": "attrText",
+              "type": "string"
+            },
+            {
+              "internalType": "uint32",
+              "name": "parentAttrId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "attrState",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes4",
+              "name": "attrFormula",
+              "type": "bytes4"
+            }
+          ],
+          "internalType": "struct Attribute.AttributeOptEx",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "getClusterTokenSubAttrIdList",
+      "outputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "",
+          "type": "uint32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "subAttrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "getSubAttrTypeAmount",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "int40",
+          "name": "",
+          "type": "int40"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "mode",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "sumAttrAmount",
+      "outputs": [
+        {
+          "internalType": "int40",
+          "name": "",
+          "type": "int40"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int40",
+          "name": "sumAmount",
+          "type": "int40"
+        },
+        {
+          "internalType": "uint8",
+          "name": "subType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "int40",
+          "name": "subAmount",
+          "type": "int40"
+        }
+      ],
+      "name": "sumAttrAmountByType",
+      "outputs": [
+        {
+          "internalType": "int40",
+          "name": "",
+          "type": "int40"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "mode",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "layerCount",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32",
+          "name": "attrId",
+          "type": "uint32"
+        }
+      ],
+      "name": "sumMountingAttrAmount",
+      "outputs": [
+        {
+          "internalType": "int40",
+          "name": "",
+          "type": "int40"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrOpt",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                },
+                {
+                  "internalType": "string",
+                  "name": "attrText",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "parentAttrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrState",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes4",
+                  "name": "attrFormula",
+                  "type": "bytes4"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeOpt[]",
+              "name": "attributeOptList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct Attribute.TokenAttributeList[]",
+          "name": "tokenAttrList",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "updateClusterTokenIdAttrList",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "clusterId",
+          "type": "uint32"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrOpt",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                },
+                {
+                  "internalType": "string",
+                  "name": "attrText",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "parentAttrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrState",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes4",
+                  "name": "attrFormula",
+                  "type": "bytes4"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeOpt[]",
+              "name": "attributeOptList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct Attribute.TokenAttributeList",
+          "name": "tokenOptAttr",
+          "type": "tuple"
+        }
+      ],
+      "name": "updateClusterTokenIdOptAttrList",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrOpt",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                },
+                {
+                  "internalType": "string",
+                  "name": "attrText",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "parentAttrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrState",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes4",
+                  "name": "attrFormula",
+                  "type": "bytes4"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeOpt[]",
+              "name": "attributeOptList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct Attribute.TokenAttributeList",
+          "name": "tokenOptAttr",
+          "type": "tuple"
+        }
+      ],
+      "name": "updateTokenIdOptAttrList",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

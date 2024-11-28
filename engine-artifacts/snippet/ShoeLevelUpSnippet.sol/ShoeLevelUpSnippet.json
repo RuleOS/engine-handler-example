@@ -1,0 +1,787 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ShoeLevelUpSnippet",
+  "sourceName": "contracts/V3/snippet/ShoeLevelUpSnippet.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "stateCounter_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "clusterArea_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "inBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "taskId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "inTokenSlotIndex",
+              "type": "uint32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint8",
+                  "name": "erc",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint32",
+                      "name": "attrId",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "int40",
+                      "name": "attrAmount",
+                      "type": "int40"
+                    }
+                  ],
+                  "internalType": "struct Attribute.AttributeIn[]",
+                  "name": "attrInList",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Token.Token",
+              "name": "inToken",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct ISnippet.PreInputTokenParams",
+          "name": "preInputToken",
+          "type": "tuple"
+        }
+      ],
+      "name": "preInputToken",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrOpt",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                },
+                {
+                  "internalType": "string",
+                  "name": "attrText",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "parentAttrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrState",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes4",
+                  "name": "attrFormula",
+                  "type": "bytes4"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeOpt[]",
+              "name": "attributeOptList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct ISnippet.TokenSnippet",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "inBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "inRound",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "taskId",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct ISnippet.ExecuteDelayParams",
+          "name": "executeDelay",
+          "type": "tuple"
+        }
+      ],
+      "name": "processExecuteDelayTime",
+      "outputs": [
+        {
+          "internalType": "int32",
+          "name": "",
+          "type": "int32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "inBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "inRound",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "ruleDurationType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "ruleDelayTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "ruleDelayBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "delayTimestamp",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "delayBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint8",
+                  "name": "erc",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint32",
+                      "name": "attrId",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "int40",
+                      "name": "attrAmount",
+                      "type": "int40"
+                    }
+                  ],
+                  "internalType": "struct Attribute.AttributeIn[]",
+                  "name": "attrInList",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Token.Token[]",
+              "name": "inTokenList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct ISnippet.InitDelayParams",
+          "name": "initDelay",
+          "type": "tuple"
+        }
+      ],
+      "name": "processInitDelayTime",
+      "outputs": [
+        {
+          "internalType": "int32",
+          "name": "",
+          "type": "int32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "outBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "taskId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "inTokenSlotIndex",
+              "type": "uint32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint8",
+                  "name": "erc",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint32",
+                      "name": "attrId",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "int40",
+                      "name": "attrAmount",
+                      "type": "int40"
+                    }
+                  ],
+                  "internalType": "struct Attribute.AttributeIn[]",
+                  "name": "attrInList",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Token.Token",
+              "name": "inToken",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct ISnippet.InputTokenParams",
+          "name": "inputToken",
+          "type": "tuple"
+        }
+      ],
+      "name": "processInputToken",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrOpt",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                },
+                {
+                  "internalType": "string",
+                  "name": "attrText",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "parentAttrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrState",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes4",
+                  "name": "attrFormula",
+                  "type": "bytes4"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeOpt[]",
+              "name": "attributeOptList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct ISnippet.TokenSnippet",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "outBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "taskId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "random",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "tokenSlotIndex",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct ISnippet.TokenSlotDelayParams",
+          "name": "tokenSlotDelay",
+          "type": "tuple"
+        }
+      ],
+      "name": "processInputTokenSlotDelayTime",
+      "outputs": [
+        {
+          "internalType": "int32",
+          "name": "",
+          "type": "int32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "outBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "taskId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "random",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "outTokenSlotIndex",
+              "type": "uint32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint8",
+                  "name": "erc",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "address",
+                  "name": "token",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "uint32",
+                      "name": "attrId",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "int40",
+                      "name": "attrAmount",
+                      "type": "int40"
+                    }
+                  ],
+                  "internalType": "struct Attribute.AttributeIn[]",
+                  "name": "attrInList",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Token.Token",
+              "name": "outToken",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct ISnippet.OutputTokenParams",
+          "name": "outputToken",
+          "type": "tuple"
+        }
+      ],
+      "name": "processOutputToken",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "attrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrOpt",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "int40",
+                  "name": "attrAmount",
+                  "type": "int40"
+                },
+                {
+                  "internalType": "string",
+                  "name": "attrText",
+                  "type": "string"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "parentAttrId",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "attrState",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes4",
+                  "name": "attrFormula",
+                  "type": "bytes4"
+                }
+              ],
+              "internalType": "struct Attribute.AttributeOpt[]",
+              "name": "attributeOptList",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct ISnippet.TokenSnippet",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32",
+              "name": "clusterId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "outBranch",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "taskId",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "random",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "tokenSlotIndex",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint8",
+              "name": "erc",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "token",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct ISnippet.TokenSlotDelayParams",
+          "name": "tokenSlotDelay",
+          "type": "tuple"
+        }
+      ],
+      "name": "processOutputTokenSlotDelayTime",
+      "outputs": [
+        {
+          "internalType": "int32",
+          "name": "",
+          "type": "int32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610dc0380380610dc083398101604081905261002f9161007c565b600180546001600160a01b039384166001600160a01b031991821617909155600080549290931691161790556100af565b80516001600160a01b038116811461007757600080fd5b919050565b6000806040838503121561008f57600080fd5b61009883610060565b91506100a660208401610060565b90509250929050565b610d02806100be6000396000f3fe608060405234801561001057600080fd5b506004361061006d5760003560e01c806324d56ffe146100725780635de70a0d1461009b5780636557196a146100c1578063814645dc146100d45780638cb665ff146100e75780639090fa45146100fa578063b6ee96de1461010d575b600080fd5b6100856100803660046105f8565b610120565b6040516100929190610710565b60405180910390f35b6100ae6100a936600461083a565b61017f565b60405160039190910b8152602001610092565b6100ae6100cf366004610981565b6101b5565b6100ae6100e236600461083a565b6101e3565b6100856100f5366004610b45565b610211565b610085610108366004610b45565b610262565b6100ae61011b366004610b81565b6102b0565b610128610374565b6101716040518060400160405280601f81526020017f2d2d2d2d2d2d2d2d2d2d2d2d2070726f636573734f7574707574546f6b656e00815250836020015163ffffffff1661030a565b610179610374565b92915050565b60006101ad6040518060600160405280602b8152602001610c31602b9139836020015163ffffffff1661030a565b506000919050565b60006101ad604051806060016040528060218152602001610c5c60219139836020015163ffffffff1661030a565b60006101ad6040518060600160405280602c8152602001610ca1602c9139836020015163ffffffff1661030a565b610219610374565b6101716040518060400160405280601e81526020017f2d2d2d2d2d2d2d2d2d2d2d2d2070726f63657373496e707574546f6b656e0000815250836020015163ffffffff1661030a565b61026a610374565b6101716040518060400160405280601a81526020017916969696969696969696969690383932a4b7383aba2a37b5b2b760311b815250836020015163ffffffff1661030a565b60006102de604051806060016040528060248152602001610c7d60249139836020015163ffffffff1661030a565b816040015160ff16600214806102fb5750816040015160ff166003145b156101ad57506101f319919050565b61034f8282604051602401610320929190610c0e565b60408051601f198184030181529190526020810180516001600160e01b0316632d839cb360e21b179052610353565b5050565b80516a636f6e736f6c652e6c6f67602083016000808483855afa5050505050565b6040518060a00160405280600060ff16815260200160006001600160a01b031681526020016000815260200160008152602001606081525090565b634e487b7160e01b600052604160045260246000fd5b60405160a081016001600160401b03811182821017156103e7576103e76103af565b60405290565b604080519081016001600160401b03811182821017156103e7576103e76103af565b60405160e081016001600160401b03811182821017156103e7576103e76103af565b60405161014081016001600160401b03811182821017156103e7576103e76103af565b604051601f8201601f191681016001600160401b038111828210171561047c5761047c6103af565b604052919050565b80356001600160a01b038116811461049b57600080fd5b919050565b803563ffffffff8116811461049b57600080fd5b803560ff8116811461049b57600080fd5b60006001600160401b038211156104de576104de6103af565b5060051b60200190565b600060a082840312156104fa57600080fd5b6105026103c5565b905061050d826104b4565b8152602061051c818401610484565b81830152604080840135818401526060840135606084015260808401356001600160401b0381111561054d57600080fd5b8401601f8101861361055e57600080fd5b803561057161056c826104c5565b610454565b81815260069190911b8201840190848101908883111561059057600080fd5b928501925b828410156105e75784848a0312156105ad5760008081fd5b6105b56103ed565b6105be856104a0565b8152868501358060040b81146105d45760008081fd5b8188015282529284019290850190610595565b608087015250939695505050505050565b60006020828403121561060a57600080fd5b81356001600160401b038082111561062157600080fd5b9083019060e0828603121561063557600080fd5b61063d61040f565b61064683610484565b8152610654602084016104a0565b6020820152610665604084016104b4565b6040820152610676606084016104a0565b60608201526080830135608082015261069160a084016104a0565b60a082015260c0830135828111156106a857600080fd5b6106b4878286016104e8565b60c08301525095945050505050565b6000815180845260005b818110156106e9576020818501810151868301820152016106cd565b818111156106fb576000602083870101525b50601f01601f19169290920160200192915050565b6000602080835260c080840160ff808751168487015283870151604060018060a01b03821681890152808901519150606082818a0152808a01519250608083818b0152808b0151935060a080818c015286855180895260e09850888d019150888160051b8e01018b8801975060005b82811015610827578e820360df190184528851805163ffffffff1683528d8101518b168e8401528881015160ff16898401528781015160040b8884015286810151610100888501819052906107d6828601826106c3565b915050868201516107ee8886018263ffffffff169052565b508d8201516108018f86018260ff169052565b50908c01516001600160e01b031916928c0192909252978c0197928c019260010161077f565b509e9d5050505050505050505050505050565b600061010080838503121561084e57600080fd5b604051908101906001600160401b0382118183101715610870576108706103af565b8160405261087d84610484565b815261088b602085016104a0565b602082015261089c604085016104b4565b60408201526108ad606085016104a0565b6060820152608084013560808201526108c860a085016104b4565b60a08201526108d960c085016104b4565b60c08201526108ea60e08501610484565b60e0820152949350505050565b600082601f83011261090857600080fd5b8135602061091861056c836104c5565b82815260059290921b8401810191818101908684111561093757600080fd5b8286015b848110156109765780356001600160401b0381111561095a5760008081fd5b6109688986838b01016104e8565b84525091830191830161093b565b509695505050505050565b60006020828403121561099357600080fd5b81356001600160401b03808211156109aa57600080fd5b9083019061014082860312156109bf57600080fd5b6109c7610431565b6109d083610484565b81526109de602084016104a0565b60208201526109ef604084016104b4565b6040820152610a00606084016104b4565b6060820152610a11608084016104b4565b6080820152610a2260a084016104a0565b60a0820152610a3360c084016104a0565b60c0820152610a4460e084016104a0565b60e0820152610100610a578185016104a0565b908201526101208381013583811115610a6f57600080fd5b610a7b888287016108f7565b918301919091525095945050505050565b600060c08284031215610a9e57600080fd5b60405160c081016001600160401b038282108183111715610ac157610ac16103af565b81604052829350610ad185610484565b8352610adf602086016104a0565b6020840152610af0604086016104b4565b6040840152610b01606086016104a0565b6060840152610b12608086016104a0565b608084015260a0850135915080821115610b2b57600080fd5b50610b38858286016104e8565b60a0830152505092915050565b600060208284031215610b5757600080fd5b81356001600160401b03811115610b6d57600080fd5b610b7984828501610a8c565b949350505050565b600060a08284031215610b9357600080fd5b60405160a081018181106001600160401b0382111715610bb557610bb56103af565b604052610bc183610484565b8152610bcf602084016104a0565b6020820152610be0604084016104b4565b6040820152610bf1606084016104b4565b6060820152610c02608084016104a0565b60808201529392505050565b604081526000610c2160408301856106c3565b9050826020830152939250505056fe2d2d2d2d2d2d2d2d2d2d2d2d2070726f63657373496e707574546f6b656e536c6f7444656c617954696d652d2d2d2d2d2d2d2d2d2d2d2d2070726f63657373496e697444656c617954696d652d2d2d2d2d2d2d2d2d2d2d2d2070726f636573734578656375746544656c617954696d652d2d2d2d2d2d2d2d2d2d2d2d2070726f636573734f7574707574546f6b656e536c6f7444656c617954696d65a2646970667358221220f358e1374a7c70b4c79dbbfb9fce4d6ca1747db74d4d681efa0b8d4ec77e10fe64736f6c63430008080033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061006d5760003560e01c806324d56ffe146100725780635de70a0d1461009b5780636557196a146100c1578063814645dc146100d45780638cb665ff146100e75780639090fa45146100fa578063b6ee96de1461010d575b600080fd5b6100856100803660046105f8565b610120565b6040516100929190610710565b60405180910390f35b6100ae6100a936600461083a565b61017f565b60405160039190910b8152602001610092565b6100ae6100cf366004610981565b6101b5565b6100ae6100e236600461083a565b6101e3565b6100856100f5366004610b45565b610211565b610085610108366004610b45565b610262565b6100ae61011b366004610b81565b6102b0565b610128610374565b6101716040518060400160405280601f81526020017f2d2d2d2d2d2d2d2d2d2d2d2d2070726f636573734f7574707574546f6b656e00815250836020015163ffffffff1661030a565b610179610374565b92915050565b60006101ad6040518060600160405280602b8152602001610c31602b9139836020015163ffffffff1661030a565b506000919050565b60006101ad604051806060016040528060218152602001610c5c60219139836020015163ffffffff1661030a565b60006101ad6040518060600160405280602c8152602001610ca1602c9139836020015163ffffffff1661030a565b610219610374565b6101716040518060400160405280601e81526020017f2d2d2d2d2d2d2d2d2d2d2d2d2070726f63657373496e707574546f6b656e0000815250836020015163ffffffff1661030a565b61026a610374565b6101716040518060400160405280601a81526020017916969696969696969696969690383932a4b7383aba2a37b5b2b760311b815250836020015163ffffffff1661030a565b60006102de604051806060016040528060248152602001610c7d60249139836020015163ffffffff1661030a565b816040015160ff16600214806102fb5750816040015160ff166003145b156101ad57506101f319919050565b61034f8282604051602401610320929190610c0e565b60408051601f198184030181529190526020810180516001600160e01b0316632d839cb360e21b179052610353565b5050565b80516a636f6e736f6c652e6c6f67602083016000808483855afa5050505050565b6040518060a00160405280600060ff16815260200160006001600160a01b031681526020016000815260200160008152602001606081525090565b634e487b7160e01b600052604160045260246000fd5b60405160a081016001600160401b03811182821017156103e7576103e76103af565b60405290565b604080519081016001600160401b03811182821017156103e7576103e76103af565b60405160e081016001600160401b03811182821017156103e7576103e76103af565b60405161014081016001600160401b03811182821017156103e7576103e76103af565b604051601f8201601f191681016001600160401b038111828210171561047c5761047c6103af565b604052919050565b80356001600160a01b038116811461049b57600080fd5b919050565b803563ffffffff8116811461049b57600080fd5b803560ff8116811461049b57600080fd5b60006001600160401b038211156104de576104de6103af565b5060051b60200190565b600060a082840312156104fa57600080fd5b6105026103c5565b905061050d826104b4565b8152602061051c818401610484565b81830152604080840135818401526060840135606084015260808401356001600160401b0381111561054d57600080fd5b8401601f8101861361055e57600080fd5b803561057161056c826104c5565b610454565b81815260069190911b8201840190848101908883111561059057600080fd5b928501925b828410156105e75784848a0312156105ad5760008081fd5b6105b56103ed565b6105be856104a0565b8152868501358060040b81146105d45760008081fd5b8188015282529284019290850190610595565b608087015250939695505050505050565b60006020828403121561060a57600080fd5b81356001600160401b038082111561062157600080fd5b9083019060e0828603121561063557600080fd5b61063d61040f565b61064683610484565b8152610654602084016104a0565b6020820152610665604084016104b4565b6040820152610676606084016104a0565b60608201526080830135608082015261069160a084016104a0565b60a082015260c0830135828111156106a857600080fd5b6106b4878286016104e8565b60c08301525095945050505050565b6000815180845260005b818110156106e9576020818501810151868301820152016106cd565b818111156106fb576000602083870101525b50601f01601f19169290920160200192915050565b6000602080835260c080840160ff808751168487015283870151604060018060a01b03821681890152808901519150606082818a0152808a01519250608083818b0152808b0151935060a080818c015286855180895260e09850888d019150888160051b8e01018b8801975060005b82811015610827578e820360df190184528851805163ffffffff1683528d8101518b168e8401528881015160ff16898401528781015160040b8884015286810151610100888501819052906107d6828601826106c3565b915050868201516107ee8886018263ffffffff169052565b508d8201516108018f86018260ff169052565b50908c01516001600160e01b031916928c0192909252978c0197928c019260010161077f565b509e9d5050505050505050505050505050565b600061010080838503121561084e57600080fd5b604051908101906001600160401b0382118183101715610870576108706103af565b8160405261087d84610484565b815261088b602085016104a0565b602082015261089c604085016104b4565b60408201526108ad606085016104a0565b6060820152608084013560808201526108c860a085016104b4565b60a08201526108d960c085016104b4565b60c08201526108ea60e08501610484565b60e0820152949350505050565b600082601f83011261090857600080fd5b8135602061091861056c836104c5565b82815260059290921b8401810191818101908684111561093757600080fd5b8286015b848110156109765780356001600160401b0381111561095a5760008081fd5b6109688986838b01016104e8565b84525091830191830161093b565b509695505050505050565b60006020828403121561099357600080fd5b81356001600160401b03808211156109aa57600080fd5b9083019061014082860312156109bf57600080fd5b6109c7610431565b6109d083610484565b81526109de602084016104a0565b60208201526109ef604084016104b4565b6040820152610a00606084016104b4565b6060820152610a11608084016104b4565b6080820152610a2260a084016104a0565b60a0820152610a3360c084016104a0565b60c0820152610a4460e084016104a0565b60e0820152610100610a578185016104a0565b908201526101208381013583811115610a6f57600080fd5b610a7b888287016108f7565b918301919091525095945050505050565b600060c08284031215610a9e57600080fd5b60405160c081016001600160401b038282108183111715610ac157610ac16103af565b81604052829350610ad185610484565b8352610adf602086016104a0565b6020840152610af0604086016104b4565b6040840152610b01606086016104a0565b6060840152610b12608086016104a0565b608084015260a0850135915080821115610b2b57600080fd5b50610b38858286016104e8565b60a0830152505092915050565b600060208284031215610b5757600080fd5b81356001600160401b03811115610b6d57600080fd5b610b7984828501610a8c565b949350505050565b600060a08284031215610b9357600080fd5b60405160a081018181106001600160401b0382111715610bb557610bb56103af565b604052610bc183610484565b8152610bcf602084016104a0565b6020820152610be0604084016104b4565b6040820152610bf1606084016104b4565b6060820152610c02608084016104a0565b60808201529392505050565b604081526000610c2160408301856106c3565b9050826020830152939250505056fe2d2d2d2d2d2d2d2d2d2d2d2d2070726f63657373496e707574546f6b656e536c6f7444656c617954696d652d2d2d2d2d2d2d2d2d2d2d2d2070726f63657373496e697444656c617954696d652d2d2d2d2d2d2d2d2d2d2d2d2070726f636573734578656375746544656c617954696d652d2d2d2d2d2d2d2d2d2d2d2d2070726f636573734f7574707574546f6b656e536c6f7444656c617954696d65a2646970667358221220f358e1374a7c70b4c79dbbfb9fce4d6ca1747db74d4d681efa0b8d4ec77e10fe64736f6c63430008080033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

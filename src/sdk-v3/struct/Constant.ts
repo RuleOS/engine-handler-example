@@ -1,0 +1,154 @@
+// @ts-nocheck
+
+import { BytesLike, utils } from "ethers";
+
+export const SDK_CHECK = true;
+
+
+export enum ENGINE_PAUSE_CHANNEL { INPUT = 1,EXECUTE = 2,CLAIM = 3,EXECUTE_CLAIM = 4, REVOKE = 5}
+export enum CLUSTER_PAUSE_CHANNEL {REG_CLUSTER = 1,ADD_CLUSTER = 2}
+export enum EXCHANGE_PAUSE_CHANNEL {MAKE_BUY = 1,MAKE_SELL = 2, CANCEL_BUY = 3, CANCEL_SELL = 4, TAKE_BUY = 5,TAKE_SELL = 6,MATCH = 7,MATCH_BATCH = 8}
+
+
+export enum HANDLER_NAME {ALLOCATE = 1,ALLOCATE_LAYER = 2,MINE = 3}
+
+export enum ERC {
+  COIN,
+  ERC20,
+  ERC721,
+  ERC1155
+}
+
+export enum TOKEN_TEMPLATE_TYPE {ID_RANGE = 0, ID_LIST = 1, SWAP_V2 = 2}
+export enum TOKEN_TEMPLATE_ID_REQUIRED {FALSE = 0, TRUE = 1, EXIST = 2, NONE = 3, MOUNTING = 4}
+export enum TOKEN_TEMPLATE_ID_FORMULA_REQUIRED {FALSE = 0, TRUE = 1}
+export enum TOKEN_TEMPLATE_AMOUNT_REQUIRED {FALSE = 0, TRUE = 1, EXIST = 2, NONE = 3, MOUNTING = 4}
+export enum TOKEN_TEMPLATE_AMOUNT_FORMULA_REQUIRED {FALSE = 0, TRUE = 1}
+export enum TOKEN_TEMPLATE_ATTRIBUTE_REQUIRED {NONE = 0, EXIST = 1}
+export enum TOKEN_TEMPLATE_OUT_ADDRESS_REQUIRED {FALSE = 0, TRUE = 1}
+
+///
+/// ============ pool-token ============
+///
+
+export const ADMIN_ROLE: BytesLike = "0x0000000000000000000000000000000000000000000000000000000000000000"; 
+export const MINTER_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("MINTER_ROLE"));//0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6
+export const TRANSFER_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("TRANSFER_ROLE"));//0x8502233096d909befbda0999bb8ea2f3a6be3c138b9fbf003752a4c8bce86f6c
+export const BURN_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("BURN_ROLE"));//0xe97b137254058bd94f28d2f3eb79e2d34074ffb488d042e3bc958e0a57d2fa22
+export const CLUSTER_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("CLUSTER_ROLE")); // 0xbddfab81602a217f3ecfb6997b6e94a69f4fc961b41915417aed0b5d381eea43
+export const APPROVE_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("APPROVE_ROLE"));//0xd81ad4b52a95dd54000b782ee547c67a6d3c6b90c6653c2a839c973d684c7b72
+export const ADD_TOKEN_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("ADD_TOKEN_ROLE"));//0x7bbad4a0a63fba7ddb96d3dc86f24f78e5133c7ea1b48d0ef2f7c9f643b27d6a
+export const ALLOCATE_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("ALLOCATE_ROLE"));//0x3e716b9e768f9140a805a7bd2ea8ed6273ee028841754af21433cf2650718e90
+export const PAUSER_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("PAUSER_ROLE"));//0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a
+export const FUNCTION_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("FUNCTION_ROLE"));//0x1201c7e1e4a03b04cc4cac913f533cbd14828fbc36d49d471bc96e1b8ac87e53
+export const PROOF_CALL_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("PROOF_CALL_ROLE"));
+export const SIGNER_ROLE: BytesLike = utils.keccak256(utils.toUtf8Bytes("SIGNER_ROLE"));
+
+export const FULL_POOL_TOKEN_ROLES = [ADMIN_ROLE, MINTER_ROLE, TRANSFER_ROLE, BURN_ROLE, CLUSTER_ROLE, APPROVE_ROLE, ADD_TOKEN_ROLE, ALLOCATE_ROLE, PAUSER_ROLE];
+
+export const CLUSTER_ADMIN_ROLE = 1;
+export const CLUSTER_DEPLOYER_ROLE = 2;
+
+
+export enum PoolTokenAllocationType {
+  Mint,
+  Transfer
+}
+
+export enum PoolTokenOperationType {
+  EditInitial, 
+  IncreaseSupply, 
+  Burn,
+  EditReleased,
+  EditBurned 
+}
+
+export enum HANDLER_CMD{EXECUTE = 0,CLAIM = 1,WITHDRAW = 2,MAKE_RANDOM = 10,EXECUTE_100=100}
+export enum HANDLER_CMD_EXECUTE_100{ON = 1,OFF = 0}
+
+export enum HANDLER_CMD_SWITCH{OFF = 0,ON = 1}
+
+export enum HANDLER_ARGS{REG = 0,UPDATE = 1}
+
+export enum HANDLER_STATE{DELETED = 0,WAITING = 1,IN_REVIEW = 2,ACCEPTED = 10,STANDALONE = 20}
+
+export enum HANDLER_ALLOCATE_LAYER_TOKEN{ENABLE = 0,DISABLE=1}
+
+export enum groupSlot_OPT{APPEND = 1,CLEAR_APPEND = 2,DELETE = 3}
+
+export enum RULE {ALL,IN,OUT}
+export enum IO {INPUT,OUTPUT}
+export enum DURATION_TYPE {TIMESTAMP=0,BLOCK_NUMBER=1}
+export enum CLUSTER_STATE {DISABLED,ENABLED,WAITING}
+export enum RULE_STATE {DISABLED,ENABLED,WAITING,DISABLED_FOREVER =10,ENABLED_FOREVER =11,UPDATE = 100}
+export enum APPROVE {NONE,ONCE,ALL}
+
+export enum TASK_STATE{INPUT=1,INPUT_TASK=2,PROCESSED=5,DONE=10,REVOKED=20,CLAIMED=30}
+
+export enum CLAIM_STATE {UNCLAIMED=0,CLAIMED=1,CLAIMABLE=2,TIMEOUT=3,CHECKED=4,EXCEPTION=100}
+
+export enum CLUSTER_DURATION_TYPE{TIMESTAMP = 0,BLOCK_NUMBER = 1}
+
+export enum EVENT_CLUSTER{REG_CLUSTER = 1,REG_GROUP_SLOT_LIST = 2,REG_RULE}
+
+export const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+export const MINT_DESTROY_ADDRESS = "0x0000000000000000000000000000000000000001";
+export const SELF_ADDRESS = "0x0000000000000000000000000000000000000002";
+
+export const BYTES4 = "0x00000000";
+
+export enum RULE_IO_TYPE {
+  TRANSFER = 0,
+  POOL_TOKEN_MINT_DESTROY = 1,
+  POOL_TOKEN_TRANSFER = 2,
+  POOL_TOKEN_MOUNT = 3,
+  POOL_TOKEN_UNMOUNT = 4,
+  NONE = 5,
+}
+
+export enum MSG_TYPE {NONE = 0, TOKEN = 1, IO_ADDRESS = 2, HANDLER, POOLTOKEN_INPUT}
+export enum MSG_LEVEL {NORMAL = 0, WARNING = 1, ERROR = 2, REQUIRED}
+
+export enum TOKEN_IN{FAILED,MATCHED}
+
+
+export enum MONITOR_TYPE {ENGINE, CLUSTER}
+
+export enum ATTRIBUTE_OPT {
+  DELTA = 1, ATTACH = 2, DETACH = 3, EXIST = 4, DELTA_MIN = 5, DELTA_MAX = 6,
+  TOKEN_DELTA = 101, TOKEN_ATTACH = 102, TOKEN_DETACH = 103, TOKEN_EXIST = 104, TOKEN_DELTA_MIN = 105, TOKEN_DELTA_MAX = 106
+}
+
+export enum ATTRIBUTE_TYPE {NONE = 0, BALANCE = 1, DELTA_AMOUNT = 2, DELTA_PERCENT = 3}
+export enum ATTRIBUTE_STATE {ENABLED = 1, DISABLED = 2, ENABLED_FOREVER = 11, DISABLED_FOREVER = 12}//disable forever, can not change state or modify
+
+export enum ATTRIBUTE_SUB_SUM_MODE {PERCENT_FIRST =1 ,AMOUNT_FIRST = 2,SEQUENCE = 3}
+
+//id of attribute [0,10^16]
+//amount of attribute [-6e23,+1.21e24] [-2^79,2^80]
+export const FORMULA_NUMBER_MAX = 10**30;
+export const FORMULA_ATTRIBUTE_ID_MAX = 10**16;
+export const FORMULA_ATTRIBUTE = 10**30;
+export const FORMULA_ATTRIBUTE_CHILD = 10**31;
+export const FORMULA_CURRENT_TIMESTAMP = 10**32;
+export const FORMULA_CURRENT_BLOCK_HEIGHT = 10**33;
+
+
+export const FORMULA_OPT_PLUS = 10**40;// +
+export const FORMULA_OPT_MINUS = 10**41;// -
+export const FORMULA_OPT_MULTIPLY = 10**42;// *
+export const FORMULA_OPT_DIVIDE = 10**43;// /
+export const FORMULA_OPT_POWER = 10**44;// ^
+export const FORMULA_OPT_FACTORIAL = 10**45;// !
+export const FORMULA_OPT_SQRT = 10**46;// g  square root
+export const FORMULA_OPT_LN = 10**47;// l
+export const FORMULA_OPT_LOG2 = 10**48;// o
+export const FORMULA_OPT_SIN = 10**49;// s
+export const FORMULA_OPT_COS = 10**50;// c
+export const FORMULA_OPT_TAN = 10**51;// t
+
+
+
+
+
+
